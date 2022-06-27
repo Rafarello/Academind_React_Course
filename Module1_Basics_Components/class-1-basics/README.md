@@ -1,5 +1,4 @@
-# Aula 1
+# Aula 1 - Academind: React - The complete Guide 2022
 
-## Componentes, props e children
+## Componentes, props, estilização com CSS e children
 
-## 
