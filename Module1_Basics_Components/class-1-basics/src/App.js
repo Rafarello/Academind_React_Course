@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Expenses from './components/Expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
 
 function App() {
+  const [yearFilter, setYearFilter] = useState('2022');
+
+  const filterYearHandler = ({target}) => {
+    setYearFilter(target.value);
+  };
+
+  console.log(yearFilter);
+
   const expenses = [
     {
       id: 'e1',
@@ -26,10 +35,21 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log('In App.js');
+    console.log(expense);
+  };
+
   return (
     <div>
       <div>
-        <Expenses expensesArray={expenses} />
+        <NewExpense
+          onAddExpense={addExpenseHandler}
+        />
+        <Expenses
+          expensesArray={expenses}
+          onFilterChange={filterYearHandler}
+        />
       </div>
     </div>
   );
