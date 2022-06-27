@@ -1,4 +1,4 @@
-# Aula 1 - Academind: React - The complete Guide 2022
+# Aula 2 - Academind: React - The complete Guide 2022
 
-## Componentes, props, estilização com CSS e children
+## Estados, Events e Events Handlers
 
