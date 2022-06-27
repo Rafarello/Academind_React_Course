@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Card.css';
+import './styles/Card.css';
 
 function Card({children, className}) {
   const classes = `card ${className}`;
