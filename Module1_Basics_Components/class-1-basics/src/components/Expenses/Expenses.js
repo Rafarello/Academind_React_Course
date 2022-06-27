@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles/Expenses.css';
 import ExpenseItem from './ExpenseItem';
 import ExpensesFilter from '../NewExpense/ExpensesFilter';
 
-function Expenses({expensesArray, onFilterChange}) {
+function Expenses({expensesArray}) {
+  const [yearFilter, setYearFilter] = useState('2022');
+
+  const filterYearHandler = ({target}) => {
+    setYearFilter(target.value);
+  };
+
   return (
     <div className="expenses">
       <ExpensesFilter
-        onFilterChange={onFilterChange}
+        yearSelected={yearFilter}
+        onFilterChange={filterYearHandler}
       />
       {expensesArray.map((expense) => (
         <ExpenseItem
@@ -15,7 +22,6 @@ function Expenses({expensesArray, onFilterChange}) {
           title={expense.title}
           amount={expense.amount}
           date={expense.date}
-          onFilterChange={onFilterChange}
         />
       ))}
     </div>
